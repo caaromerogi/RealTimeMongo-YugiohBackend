@@ -21,8 +21,8 @@ namespace UseCases.DTO
         public int? Level { get; set; }
         public string? Race { get; set; }
         public string? Attribute { get; set; }
-        public IEnumerable<CardImage>? Card_Images { get; set; }
-        public IEnumerable<CardPrice>? Card_Prices { get; set; }
+        public IEnumerable<CardImage>? CardImages { get; set; }
+        public IEnumerable<CardPrice>? CardPrices { get; set; }
         public string? CurrentOwner { get; set; }
         public IEnumerable<PastOwner>? LastOwners { get; set; }
         public string MongoOperationType { get; set; }
@@ -42,8 +42,8 @@ namespace UseCases.DTO
                 Level = Level,
                 Race = Race,
                 Attribute = Attribute,
-                Card_Images = Card_Images,
-                Card_Prices = Card_Prices,
+                CardImages = CardImages,
+                CardPrices = CardPrices,
                 CurrentOwner = CurrentOwner,
                 LastOwners = LastOwners,
             };

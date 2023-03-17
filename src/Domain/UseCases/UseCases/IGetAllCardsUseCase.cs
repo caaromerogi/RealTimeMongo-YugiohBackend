@@ -5,11 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UseCases.Gateways
+namespace UseCases.UseCases
 {
-    public interface ICardRepository
+    public interface IGetAllCardsUseCase
     {
-        Task<Card> GetCardById(int id);
         Task<IEnumerable<Card>> GetAllCards();
     }
 }

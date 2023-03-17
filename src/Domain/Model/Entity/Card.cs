@@ -20,8 +20,8 @@ namespace Model.Entity
         public int? Level { get; set; }
         public string? Race { get; set; }
         public string? Attribute { get; set; }
-        public IEnumerable<CardImage>? Card_Images { get; set; }
-        public IEnumerable<CardPrice>? Card_Prices { get; set; }
+        public IEnumerable<CardImage>? CardImages { get; set; }
+        public IEnumerable<CardPrice>? CardPrices { get; set; }
         public string? CurrentOwner { get; set; }
         public IEnumerable<PastOwner>? LastOwners { get; set; }
     }

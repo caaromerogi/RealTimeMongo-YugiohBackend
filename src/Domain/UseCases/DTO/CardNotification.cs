@@ -8,7 +8,7 @@ namespace UseCases.DTO
 {
     public class CardNotification
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
         public string MongoOperationType { get; set; }
     }
 }

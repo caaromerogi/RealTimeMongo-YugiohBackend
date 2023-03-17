@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Model.Entity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,41 @@ namespace UseCases.Stream
             _cardRepository = cardRepository;
         }
 
-        public Task<CardModifiedDTO> UpdateDatabaseAsync()
+        public async Task<CardModifiedDTO> UpdateDatabaseAsync()
         {
-            throw new NotImplementedException();
+            CardNotification notification = await _streamMongo.ReceiveDocumentChanged();
+
+            if (notification.MongoOperationType.Equals("delete"))
+            {
+                return new()
+                {
+                    Id = notification.Id,
+                    MongoOperationType= notification.MongoOperationType
+                };
+            }
+
+            Card card = await _cardRepository.GetCardById(notification.Id);
+
+            return new()
+            {
+                Id = card.Id,
+                Name = card.Name,
+                InInventory = card.InInventory,
+                Type = card.Type,
+                FrameType = card.FrameType,
+                Desc = card.Desc,
+                Atk = card.Atk,
+                Def = card.Def,
+                Level = card.Level,
+                Race = card.Race,
+                Attribute = card.Attribute,
+                CardImages = card.CardImages,
+                CardPrices = card.CardPrices,
+                CurrentOwner = card.CurrentOwner,
+                LastOwners = card.LastOwners,
+                MongoOperationType = notification.MongoOperationType
+            };
+
         }
     }
 }
