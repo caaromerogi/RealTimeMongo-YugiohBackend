@@ -18,6 +18,6 @@ namespace Mongo.Context
             _database = _mongoClient.GetDatabase(databaseName);
         }
 
-        public IMongoCollection<CardBsonEntity> Users => _database.GetCollection<CardBsonEntity>("Cards");
+        public IMongoCollection<CardBsonEntity> Cards => _database.GetCollection<CardBsonEntity>("Cards");
     }
 }

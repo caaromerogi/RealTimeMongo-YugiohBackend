@@ -10,6 +10,6 @@ namespace Mongo.Context
 {
     public interface IContext
     {
-        public IMongoCollection<CardBsonEntity> Users { get; }
+        public IMongoCollection<CardBsonEntity> Cards { get; }
     }
 }

@@ -25,7 +25,7 @@ namespace UseCases.DTO
         public IEnumerable<CardPrice>? Card_Prices { get; set; }
         public string? CurrentOwner { get; set; }
         public IEnumerable<PastOwner>? LastOwners { get; set; }
-        public string MongoOperation { get; set; }
+        public string MongoOperationType { get; set; }
 
         public Card AsModelEntity()
         {

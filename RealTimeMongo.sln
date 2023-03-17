@@ -28,6 +28,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Adapters", "Adapters", "{E2
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mongo", "src\Infrastructure\Adapters\Mongo\Mongo.csproj", "{1DC0002B-3A4B-42CE-BD75-0828ED7170D0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalRHub", "src\Infrastructure\Adapters\SignalRHub\SignalRHub.csproj", "{FC214C39-99B1-4970-8810-87465674D5C8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -54,6 +56,10 @@ Global
 		{1DC0002B-3A4B-42CE-BD75-0828ED7170D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1DC0002B-3A4B-42CE-BD75-0828ED7170D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1DC0002B-3A4B-42CE-BD75-0828ED7170D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC214C39-99B1-4970-8810-87465674D5C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC214C39-99B1-4970-8810-87465674D5C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC214C39-99B1-4970-8810-87465674D5C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC214C39-99B1-4970-8810-87465674D5C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -68,6 +74,7 @@ Global
 		{5A99211B-3307-4145-8E68-245645C11E6E} = {D3B31437-6B20-4C42-B6F2-3BC2783373A2}
 		{E2F20BD2-5029-4AA4-8AFF-18C095169C8A} = {479A80AA-BE57-4921-8059-764FEC914E19}
 		{1DC0002B-3A4B-42CE-BD75-0828ED7170D0} = {E2F20BD2-5029-4AA4-8AFF-18C095169C8A}
+		{FC214C39-99B1-4970-8810-87465674D5C8} = {E2F20BD2-5029-4AA4-8AFF-18C095169C8A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BA87321A-CEEE-4410-8838-2A95B5544AD8}
