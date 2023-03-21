@@ -1,5 +1,6 @@
 ﻿using Model.Entity;
 using Model.Entity.CardInfo;
+using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,7 @@ namespace Mongo.Entities
     public class CardBsonEntity
     {
         [BsonId]
+        [BsonRepresentation(BsonType.Int32)]
         public int? Id { get; set; }
         [BsonElement(elementName:"Name")]
         public string? Name { get; set; }
@@ -34,9 +36,9 @@ namespace Mongo.Entities
         [BsonElement(elementName: "Attribute")]
         public string? Attribute { get; set; }
         [BsonElement(elementName: "Card_Images")]
-        public IEnumerable<CardImage>? CardImages { get; set; }
+        public IEnumerable<CardImage>? Card_Images { get; set; }
         [BsonElement(elementName: "Card_Prices")]
-        public IEnumerable<CardPrice>? CardPrices { get; set; }
+        public IEnumerable<CardPrice>? Card_Prices { get; set; }
         [BsonElement(elementName: "CurrentOwner")]
         public string? CurrentOwner { get; set; }
         [BsonElement(elementName: "LastOwners")]
@@ -57,8 +59,8 @@ namespace Mongo.Entities
                 Level = Level,
                 Race = Race,
                 Attribute = Attribute,
-                CardImages = CardImages,
-                CardPrices = CardPrices,
+                CardImages = Card_Images,
+                CardPrices = Card_Prices,
                 CurrentOwner = CurrentOwner,
                 LastOwners = LastOwners,
             };

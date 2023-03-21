@@ -6,10 +6,10 @@ using System.Text;
 using System.Threading.Tasks;
 using UseCases.DTO;
 
-namespace SignalRHub.Sender
+namespace Mongo.Streams
 {
-    public interface INotificationSender : IAsyncObserver<CardNotification>
+    public interface IChangeStreamMongo : IAsyncObservable<CardNotification>
     {
-        //public Task ConnectToStream();
+
     }
 }

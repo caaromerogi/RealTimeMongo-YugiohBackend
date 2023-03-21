@@ -1,4 +1,5 @@
 ﻿using Mongo.Context;
+using Mongo.DatabaseHelper;
 using Mongo.Repositories;
 using Mongo.Streams;
 using SignalRHub.Sender;
@@ -14,13 +15,14 @@ namespace Api.Extensions
         {
             #region UseCases 
             service.AddScoped<IGetAllCardsUseCase, GetAllCardsUseCase>();
-            service.AddScoped<IUpdateDatabaseUseCase, UpdateDatabaseUseCase>();
+            service.AddSingleton<IUpdateDatabaseUseCase, UpdateDatabaseUseCase>();
             #endregion UseCases
 
             #region Adapters
-            service.AddScoped<INotificationSender, NotificationSender>();
-            service.AddScoped<ICardRepository, CardRepository>();
-            service.AddScoped<IChangeStreamMongo, ChangeStreamMongo>();
+            service.AddSingleton<ICardRepository, CardRepository>();
+            service.AddSingleton<IChangeStreamMongo, ChangeStreamMongo>();
+            service.AddSingleton<INotificationSender, NotificationSender>();
+            service.AddSingleton<IDatabaseMigration, DatabaseMigration>();
             #endregion
 
             return service;

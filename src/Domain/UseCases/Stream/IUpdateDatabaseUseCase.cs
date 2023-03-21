@@ -9,6 +9,6 @@ namespace UseCases.Stream
 {
     public interface IUpdateDatabaseUseCase
     {
-        public Task<CardModifiedDTO> UpdateDatabaseAsync();
+        public Task<CardModifiedDTO> UpdateDatabaseAsync(CardNotification card);
     }
 }

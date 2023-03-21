@@ -11,25 +11,21 @@ namespace UseCases.Stream
 {
     public class UpdateDatabaseUseCase : IUpdateDatabaseUseCase
     {
-        private readonly IChangeStreamMongo _streamMongo;
         private readonly ICardRepository _cardRepository;
 
-        public UpdateDatabaseUseCase(IChangeStreamMongo streamMongo, ICardRepository cardRepository)
+        public UpdateDatabaseUseCase(ICardRepository cardRepository)
         {
-            _streamMongo = streamMongo;
             _cardRepository = cardRepository;
         }
 
-        public async Task<CardModifiedDTO> UpdateDatabaseAsync()
+        public async Task<CardModifiedDTO> UpdateDatabaseAsync(CardNotification notification)
         {
-            CardNotification notification = await _streamMongo.ReceiveDocumentChanged();
-
             if (notification.MongoOperationType.Equals("delete"))
             {
                 return new()
                 {
                     Id = notification.Id,
-                    MongoOperationType= notification.MongoOperationType
+                    MongoOperationType = notification.MongoOperationType
                 };
             }
 
